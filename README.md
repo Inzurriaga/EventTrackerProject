@@ -8,7 +8,7 @@ By: Gabriel Inzurriaga
 a restful application at the moment can only do full crud on the notes table but later will able to do full crud on the task.
 
 
-### Concepts
+### Paths
 
 | Return Type | Route                 | Functionality                  |
 |-------------|-----------------------|--------------------------------|
@@ -32,3 +32,7 @@ Gradle
 Spring Boot
 
 git
+
+### Lesson learns
+
+learn how to use the Spring data JPA
