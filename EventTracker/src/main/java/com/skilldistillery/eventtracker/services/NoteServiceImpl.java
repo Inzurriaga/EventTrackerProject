@@ -36,6 +36,7 @@ public class NoteServiceImpl implements NoteService {
 	
 	@Override
 	public Note updateNote(Note note, int id) {
+		System.out.println("im inide the service " + note.getTitle());
 		Optional<Note> noteOpt = repo.findById(id);
 		if(noteOpt.isPresent()) {
 			note.setId(id);

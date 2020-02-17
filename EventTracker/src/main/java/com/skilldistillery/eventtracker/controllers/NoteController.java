@@ -64,6 +64,7 @@ public class NoteController {
 	
 	@PutMapping("notes/{id}")
 	public Note updateNote(@RequestBody Note note, @PathVariable Integer id, HttpServletRequest req, HttpServletResponse res) {
+		System.out.println(note);
 		try {
 			Note updatedNote = srv.updateNote(note, id);
 			StringBuffer reqLocation = req.getRequestURL();

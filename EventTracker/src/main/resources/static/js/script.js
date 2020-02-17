@@ -1,5 +1,6 @@
 let cardContainer = document.querySelector("#notes-container");
 let notes = [];
+let noteIndex;
 
 window.onload = () => {
   cards = getAllNotes();
@@ -13,6 +14,12 @@ document.querySelector(".create-note-button").addEventListener("click", (e) => {
   e.preventDefault();
   createNote();
 })
+
+document.querySelector(".update-note-button").addEventListener("click", (e) => {
+  e.preventDefault();
+  updateNote();
+})
+
 
 getAllNotes = async () => {
 	try {
@@ -60,6 +67,7 @@ createNote = async () => {
 
 updateNoteModal = (index) => {
   displayUpdateModal();
+  noteIndex = index;
   let note = notes[index];
   let title = document.querySelector(".note-title-update-input");
   title.value = note.title;
@@ -77,11 +85,36 @@ updateNoteModal = (index) => {
   }
 }
 
-updateNote = async (index) => {
+updateNote = async () => {
   let title = document.querySelector(".note-title-update-input").value;
+  let color = document.querySelector("#update-note input[type=radio]:checked").value;
+  let json = JSON.stringify( {
+    title,
+    color,
+    tasks: notes[noteIndex].tasks,
+    createDate: notes[noteIndex].createDate,
+    lastUpdate: notes[noteIndex].lastUpdate
+  });
+  try {
+    let promise = await fetch(`api/notes/${notes[noteIndex].id}`, { 
+      method: "PUT",
+      body: json,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    let note = await promise.json();
+    console.log(note)
+    notes[noteIndex] = note;
+    addNotesToDom();
+	} catch (e) {
+    console.log(e)
+  }
+  removeUpdateModal();
 }
 
 addNotesToDom = () => {
+  cardContainer.innerHTML = "";
 	notes.forEach((note, index) => {
     addNoteToDom(note, index);
   })

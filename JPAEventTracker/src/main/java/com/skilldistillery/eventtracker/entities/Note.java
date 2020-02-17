@@ -87,7 +87,11 @@ public class Note {
 	public void setTasks(List<Task> tasks) {
 		this.tasks = tasks;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Note [id=" + id + ", title=" + title + ", color=" + color + ", createDate=" + createDate
+				+ ", lastUpdate=" + lastUpdate + ", tasks=" + tasks + "]";
+	}
 
 }
