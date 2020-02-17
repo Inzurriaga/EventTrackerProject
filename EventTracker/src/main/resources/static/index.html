@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
+	    <link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<header>
+      <h1>Tracker Keeper</h1>
+      <button class="display-note-modal-button">create</button>
+    </header>
+    <main>
+      <section id="notes-container">
+
+      </section>
+      <!--  this is the add note form -->
+      <section id="add-note">
+        <form>
+        	<label>
+        		<h3>Note Card Title</h3>
+          		<input type="text" class="note-title-input" placeholder="Title"/>
+        	</label>
+          <div>
+          		<h3>Note Card Color</h3>
+          		<div class="color-nav">
+		          <label class="radio-button-one">
+		            <input class="radio-one" type="radio" name="color" value="#d8f635" checked/>
+		            <span class="checkmark-one"></span>
+		          </label>
+		          <label class="radio-button-two">
+		            <input class="radio-two" type="radio" name="color" value="#44e8f1"/>
+		            <span class="checkmark-two"></span>
+		          </label>
+		          <label class="radio-button-three">
+		            <input class="radio-three" type="radio" name="color" value="#ef4898"/>
+		            <span class="checkmark-three"></span>
+		          </label>
+		          <label class="radio-button-four">
+		            <input class="radio-four" type="radio" name="color" value="#fece00"/>
+		            <span class="checkmark-four"></span>
+		          </label>
+          		</div>
+          </div>
+          <button class="create-note-button">Create Note</button>
+        </form>
+      </section>
+      <!-- update card -->
+      <section id="update-note">
+      		<form>
+        	<label>
+        		<h3>Note Card Title</h3>
+          		<input type="text" class="note-title-update-input" placeholder="Title"/>
+        	</label>
+          <div>
+          		<h3>Note Card Color</h3>
+          		<div class="color-nav">
+		          <label class="radio-button-one-update">
+		            <input class="radio-one-update" type="radio" name="color" value="#d8f635"/>
+		            <span class="checkmark-one-update"></span>
+		          </label>
+		          <label class="radio-button-two-update">
+		            <input class="radio-two-update" type="radio" name="color" value="#44e8f1"/>
+		            <span class="checkmark-two-update"></span>
+		          </label>
+		          <label class="radio-button-three-update">
+		            <input class="radio-three-update" type="radio" name="color" value="#ef4898"/>
+		            <span class="checkmark-three-update"></span>
+		          </label>
+		          <label class="radio-button-four-update">
+		            <input class="radio-four-update" type="radio" name="color" value="#fece00"/>
+		            <span class="checkmark-four-update"></span>
+		          </label>
+          		</div>
+          </div>
+          <button class="create-note-button">update Note</button>
+          </form>
+      </section>
+    </main>
+	</body>
+	<script src="./js/script.js"></script>
+</html>

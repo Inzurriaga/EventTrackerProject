@@ -1,4 +1,4 @@
-package com.skilldistillery.eventtracker.entities;
+ package com.skilldistillery.eventtracker.entities;
 
 import java.util.Date;
 import java.util.List;
